@@ -353,7 +353,7 @@
 
         if (this.compressed) {
             this._sendCompressed(buffer);
-        } else {
+        } else if (this.socket) {
             this.socket.send(buffer);
         }
     };
