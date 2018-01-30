@@ -302,7 +302,7 @@ client.selectMailbox('INBOX').then((mailbox) => { ... });
 
 ## List messages
 
-List messages with `listMessages(path, sequence, query[, options])`
+List messages with `listMessages(path, sequence, query[, options[, selectoptions]])`
 
 Where
 
@@ -313,6 +313,7 @@ Where
     * **byUid** if `true` executes `UID FETCH` instead of `FETCH`
     * **changedSince** is the modseq filter. Only messages with higher modseq value will be returned
     * **valueAsString** LITERAL and STRING values are returned as strings rather than Uint8Array objects. Defaults to true.
+  * **selectoptions** is an optional object with options for SELECT
 
 Resolves with
 
