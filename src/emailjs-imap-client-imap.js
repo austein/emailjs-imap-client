@@ -133,6 +133,7 @@
                 binaryType: 'arraybuffer',
                 useSecureTransport: this.secureMode,
                 ca: this.options.ca,
+                socketOptions: this.options.socketOptions,
                 tlsWorkerPath: this.options.tlsWorkerPath
             });
 
