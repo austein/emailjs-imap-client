@@ -87,6 +87,9 @@
         this.onerror = null; // Irrecoverable error occurred. Connection to the server will be closed automatically.
         this.onready = null; // The connection to the server has been established and greeting is received
         this.onidle = null;  // There are no more commands to process
+
+        this.TIMEOUT_SOCKET_LOWER_BOUND = options.socketTimeout || Imap.prototype.TIMEOUT_SOCKET_LOWER_BOUND_BASE;
+        this.ON_DATA_TIMEOUT = this.TIMEOUT_SOCKET_LOWER_BOUND + Math.floor(4096 * Imap.prototype.TIMEOUT_SOCKET_MULTIPLIER);
     }
 
     // Constants
@@ -99,7 +102,7 @@
     /**
      * Lower Bound for socket timeout to wait since the last data was written to a socket
      */
-    Imap.prototype.TIMEOUT_SOCKET_LOWER_BOUND = 10000;
+    Imap.prototype.TIMEOUT_SOCKET_LOWER_BOUND_BASE = 10000;
 
     /**
      * Multiplier for socket timeout:
@@ -113,7 +116,6 @@
     /**
      * Timeout used in _onData, max packet size is 4096 bytes.
      */
-    Imap.prototype.ON_DATA_TIMEOUT = Imap.prototype.TIMEOUT_SOCKET_LOWER_BOUND + Math.floor(4096 * Imap.prototype.TIMEOUT_SOCKET_MULTIPLIER);
 
     // PUBLIC METHODS
 

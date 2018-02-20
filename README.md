@@ -52,6 +52,7 @@ Where
     * **useSecureTransport** (optional) enables TLS
     * **ignoreTLS** – if set to true, do not call STARTTLS before authentication even if the host advertises support for it
     * **requireTLS** – if set to true, always use STARTTLS before authentication even if the host does not advertise it. If STARTTLS fails, do not try to authenticate the user
+    * **socketTimeout** – sets the timeout in ms for the IMAP socket
     * **enableCompression** - if set to true then use IMAP COMPRESS extension (rfc4978) if the server supports it (Gmail does). All data sent and received in this case is compressed with *deflate*
     * **ca** (optional) (only in conjunction with the [TCPSocket shim](https://github.com/emailjs/emailjs-tcp-socket)) if you use TLS with forge, pin a PEM-encoded certificate as a string. Please refer to the [tcp-socket documentation](https://github.com/emailjs/emailjs-tcp-socket) for more information!
     * **tlsWorkerPath** (optional) (only in conjunction with the [TCPSocket shim](https://github.com/emailjs/emailjs-tcp-socket)) if you use TLS with forge, this path indicates where the file for the TLS Web Worker is located. Please refer to the [tcp-socket documentation](https://github.com/emailjs/emailjs-tcp-socket) for more information!
